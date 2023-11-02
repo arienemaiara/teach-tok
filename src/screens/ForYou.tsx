@@ -5,7 +5,7 @@ import { ScreenContainer } from '@/components/layout/Containers'
 import Question from '@/components/forYou/Question'
 import { DefaultText } from '@/components/layout/Texts'
 
-type QuestionOptionType = {
+export type QuestionOptionType = {
   id: string
   answer: string
 }
