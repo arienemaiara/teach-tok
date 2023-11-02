@@ -5,6 +5,7 @@ import styled from 'styled-components/native'
 import { QuestionType } from '@/screens/ForYou' //todo remove from here
 
 import SideOptions from './SideOptions'
+import Playlist from './Playlist'
 
 const { width, height } = Dimensions.get('window')
 
@@ -17,6 +18,7 @@ export default function Question({ question }: { question: QuestionType }) {
         style={{ flex: 1, justifyContent: 'center' }}>
         <ImageOverlay />
         <SideOptions />
+        <Playlist playlist={question.playlist} />
       </ImageBackground>
     </Container>
   )

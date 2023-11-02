@@ -92,7 +92,12 @@ export default function ForYou() {
 
   return (
     <ScreenContainer>
-      <FlatList data={questions} renderItem={renderItem} bounces={false} />
+      <FlatList
+        data={questions}
+        renderItem={renderItem}
+        bounces={false}
+        pagingEnabled
+      />
     </ScreenContainer>
   )
 }

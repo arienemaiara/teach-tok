@@ -7,6 +7,10 @@ export const DefaultText = styled.Text`
   font-size: 12px;
 `
 
+export const BoldText = styled(DefaultText)`
+  font-weight: bold;
+`
+
 export const HeaderTitle = styled(DefaultText)`
   font-weight: bold;
   font-size: 18px;
