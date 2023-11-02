@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import { Dimensions, ImageBackground, Text, View } from 'react-native'
+import { Dimensions, ImageBackground, View } from 'react-native'
 import styled from 'styled-components/native'
 
-import { QuestionType, QuestionOptionType } from '@/screens/ForYou' //todo remove from here
+import { QuestionType } from '@/screens/ForYou' //todo remove from here
 
 import SideOptions from './SideOptions'
 import Playlist from './Playlist'
@@ -57,7 +57,7 @@ export default function Question({ question }: { question: QuestionType }) {
               </QuestionDescription>
             </View>
           </Column>
-          <SideOptions />
+          <SideOptions user={user} />
         </QuestionContainer>
         <Playlist playlist={playlist} />
       </Content>

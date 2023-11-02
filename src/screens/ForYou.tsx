@@ -10,7 +10,7 @@ export type QuestionOptionType = {
   answer: string
 }
 
-type QuestionUserType = {
+export type QuestionUserType = {
   name: string
   avatar: string
 }
