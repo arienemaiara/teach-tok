@@ -17,4 +17,5 @@ export type QuestionType = {
   question: string
   options: QuestionOptionType[]
   user: QuestionUserType
+  correct_options: QuestionOptionType[]
 }
