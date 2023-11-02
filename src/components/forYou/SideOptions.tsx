@@ -59,7 +59,7 @@ export default function SideOptions() {
 }
 
 const Container = styled.View`
-  flex: 1;
+  padding: 15px;
   justify-content: flex-end;
 `
 
