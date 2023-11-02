@@ -16,7 +16,7 @@ export default function useFetchQuestions() {
   const fetchQuestions = async () => {
     const collectedData = []
 
-    while (collectedData.length < 5) {
+    while (collectedData.length < NUMBER_OF_ITEMS_TO_FETCH) {
       const question = await fetchQuestion()
       const questionId = question.id
 
