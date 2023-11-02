@@ -53,10 +53,9 @@
 	<false/>
 	<key>UIAppFonts</key>
 	<array>
-		<string>MPLUSRounded1c-Light.ttf</string>
-		<string>MPLUSRounded1c-Medium.ttf</string>
-		<string>MPLUSRounded1c-Regular.ttf</string>
-		<string>MPLUSRounded1c-Thin.ttf</string>
+		<string>Nunito-Light.ttf</string>
+		<string>Nunito-Medium.ttf</string>
+		<string>Nunito-Regular.ttf</string>
 	</array>
 </dict>
 </plist>
