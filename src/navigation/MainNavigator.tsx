@@ -14,7 +14,10 @@ export default function MainNavigator() {
       <Tab.Navigator
         initialRouteName="ForYou"
         tabBar={props => <TabBar {...props} />}
-        screenOptions={{ header: props => <Header {...props} /> }}>
+        screenOptions={{
+          headerTransparent: true,
+          header: props => <Header {...props} />,
+        }}>
         <Tab.Screen
           name="ForYou"
           component={ForYou}

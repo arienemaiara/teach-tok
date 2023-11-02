@@ -39,11 +39,7 @@ const TAB_ROUTES: TabRoutesType = {
   },
 }
 
-export default function TabBar({
-  state,
-  descriptors,
-  navigation,
-}: BottomTabBarProps) {
+export default function TabBar({ state, navigation }: BottomTabBarProps) {
   const TabIcons = () => {
     const { routes, index: activeRouteIndex } = state
 

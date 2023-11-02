@@ -7,12 +7,7 @@ import { faSearch, faStopwatch } from '@fortawesome/free-solid-svg-icons'
 import { DefaultText, HeaderTitle } from '@/components/layout/Texts'
 import { StyledIcon } from '@/components/layout/Icon'
 
-export default function Header({
-  layout,
-  options,
-  route,
-  navigation,
-}: BottomTabHeaderProps) {
+export default function Header({ options }: BottomTabHeaderProps) {
   return (
     <Container>
       <Timer>
@@ -24,7 +19,7 @@ export default function Header({
         <HeaderTitleLine />
       </HeaderTitleContainer>
       <Search>
-        <StyledIcon icon={faSearch} />
+        <StyledIcon icon={faSearch} active />
       </Search>
     </Container>
   )
@@ -39,16 +34,22 @@ const Container = styled.SafeAreaView`
 
 const HeaderTitleContainer = styled.View`
   align-items: center;
+  justify-content: center;
+  flex: 1;
 `
 
 const HeaderTitleLine = styled.View`
   height: 4px;
   width: 30px;
-  background-color: black;
+  background-color: #fff;
 `
 
 const Timer = styled.View`
   flex-direction: row;
+  flex: 1;
 `
 
-const Search = styled.View``
+const Search = styled.View`
+  flex: 1;
+  align-items: flex-end;
+`
