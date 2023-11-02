@@ -1,0 +1,25 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "assets/fonts/MPLUSRounded1c-Light.ttf",
+      "sha1": "e1b7dda55d8960aa5ab2e7259ad5a32aab991711"
+    },
+    {
+      "path": "assets/fonts/MPLUSRounded1c-Medium.ttf",
+      "sha1": "2fa528731da195f852e5f0e5c87ded8f03749544"
+    },
+    {
+      "path": "assets/fonts/MPLUSRounded1c-Regular.ttf",
+      "sha1": "7a765b8ca57cd4592baf29811b92063d23c05bf3"
+    },
+    {
+      "path": "assets/fonts/MPLUSRounded1c-Thin.ttf",
+      "sha1": "bd731bf18126e99ac84bab9a3f20b6ebaa9741cd"
+    },
+    {
+      "path": "assets/fonts/OFL.txt",
+      "sha1": "43513d1f6a1329962106efc212457e1d6ef9e980"
+    }
+  ]
+}
