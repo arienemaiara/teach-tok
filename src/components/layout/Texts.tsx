@@ -4,6 +4,7 @@ export const DefaultText = styled.Text`
   letter-spacing: -0.4px;
   font-family: 'Nunito';
   color: #fff;
+  font-size: 12px;
 `
 
 export const HeaderTitle = styled(DefaultText)`

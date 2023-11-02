@@ -12,7 +12,7 @@ export default function Header({ options }: BottomTabHeaderProps) {
     <Container>
       <Timer>
         <StyledIcon icon={faStopwatch} />
-        <DefaultText>10m</DefaultText>
+        <TimerText>10m</TimerText>
       </Timer>
       <HeaderTitleContainer>
         <HeaderTitle>{options.title}</HeaderTitle>
@@ -26,6 +26,7 @@ export default function Header({ options }: BottomTabHeaderProps) {
 }
 
 const Container = styled.SafeAreaView`
+  height: 80px;
   flex-direction: row;
   justify-content: space-between;
   margin: 15px;
@@ -47,6 +48,10 @@ const HeaderTitleLine = styled.View`
 const Timer = styled.View`
   flex-direction: row;
   flex: 1;
+`
+
+const TimerText = styled(DefaultText)`
+  opacity: 0.5;
 `
 
 const Search = styled.View`

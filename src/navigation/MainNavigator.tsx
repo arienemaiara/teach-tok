@@ -16,6 +16,7 @@ export default function MainNavigator() {
         tabBar={props => <TabBar {...props} />}
         screenOptions={{
           headerTransparent: true,
+          headerShadowVisible: false,
           header: props => <Header {...props} />,
         }}>
         <Tab.Screen
