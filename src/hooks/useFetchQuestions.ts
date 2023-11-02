@@ -6,7 +6,7 @@ import { BASE_URL, NUMBER_OF_ITEMS_TO_FETCH } from '@/constants'
 import { QuestionType } from '@/types'
 
 export default function useFetchQuestions() {
-  const [fetchedIds, setFetchedIds] = useState<number[]>([])
+  const [fetchedIds] = useState<Set<number>>(new Set())
 
   const fetchQuestion = async () => {
     const res = (await (await fetch(BASE_URL)).json()) as QuestionType
@@ -15,14 +15,17 @@ export default function useFetchQuestions() {
 
   const fetchQuestions = async () => {
     const collectedData = []
-    for (let i = 0; i < NUMBER_OF_ITEMS_TO_FETCH; i++) {
-      let question: QuestionType
-      do {
-        question = await fetchQuestion()
-      } while (fetchedIds.includes(question.id))
-      collectedData.push(question)
-      setFetchedIds(prevIds => [...prevIds, question.id])
+
+    while (collectedData.length < 5) {
+      const question = await fetchQuestion()
+      const questionId = question.id
+
+      if (!fetchedIds.has(questionId)) {
+        collectedData.push(question)
+        fetchedIds.add(questionId)
+      }
     }
+
     return collectedData
   }
 
