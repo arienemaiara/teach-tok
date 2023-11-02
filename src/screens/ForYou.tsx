@@ -1,4 +1,5 @@
 import React from 'react'
+import { FlatList, ListRenderItem } from 'react-native'
 
 import { ScreenContainer } from '@/components/layout/Containers'
 import Question from '@/components/forYou/Question'
@@ -54,10 +55,44 @@ const question: QuestionType = {
   },
 }
 
+const question2: QuestionType = {
+  type: 'mcq',
+  id: 2979,
+  playlist: 'Period 6: 1865-1898',
+  description: '5.5 Sectional Conflict: Regional Differences #apush',
+  question: "What were the two largest immigrant groups during the mid-1800's?",
+  image:
+    'https://cross-platform-rwa.rp.devfactory.com/images/2979%20-%20german%20and%20irish%20immigrant%20groups.png',
+  options: [
+    {
+      id: 'A',
+      answer: 'German & Irish',
+    },
+    {
+      id: 'B',
+      answer: 'Italian & German',
+    },
+    {
+      id: 'C',
+      answer: 'Chinese & Japanese',
+    },
+  ],
+  user: {
+    name: 'AP US History',
+    avatar: 'https://cross-platform-rwa.rp.devfactory.com/avatars/apush.png',
+  },
+}
+
 export default function ForYou() {
+  const questions = [question, question2]
+
+  const renderItem: ListRenderItem<QuestionType> = ({ item }) => {
+    return <Question question={item} />
+  }
+
   return (
     <ScreenContainer>
-      <Question question={question} />
+      <FlatList data={questions} renderItem={renderItem} bounces={false} />
     </ScreenContainer>
   )
 }

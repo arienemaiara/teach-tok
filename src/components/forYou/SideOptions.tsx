@@ -24,7 +24,7 @@ const Comments = () => {
   return (
     <OptionButton>
       <StyledIcon icon={faCommentDots} active size={26} />
-      <DefaultText>3</DefaultText>
+      <DefaultText>2</DefaultText>
     </OptionButton>
   )
 }
@@ -33,7 +33,7 @@ const Bookmark = () => {
   return (
     <OptionButton>
       <StyledIcon icon={faBookmark} active size={26} />
-      <DefaultText>5</DefaultText>
+      <DefaultText>203</DefaultText>
     </OptionButton>
   )
 }
