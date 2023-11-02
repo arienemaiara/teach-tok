@@ -4,28 +4,7 @@ import { FlatList, ListRenderItem } from 'react-native'
 import { ScreenContainer } from '@/components/layout/Containers'
 import Question from '@/components/forYou/Question'
 import useFetchQuestions from '@/hooks/useFetchQuestions'
-
-export type QuestionOptionType = {
-  id: string
-  answer: string
-}
-
-export type QuestionUserType = {
-  name: string
-  avatar: string
-}
-
-//todo remove from here
-export type QuestionType = {
-  type: string
-  id: number
-  playlist: string
-  description: string
-  image: string
-  question: string
-  options: QuestionOptionType[]
-  user: QuestionUserType
-}
+import { QuestionType } from '@/types'
 
 export default function ForYou() {
   const { data, isLoading, isError } = useFetchQuestions()

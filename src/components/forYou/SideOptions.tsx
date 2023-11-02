@@ -10,7 +10,7 @@ import {
 
 import { StyledIcon } from '@/components/layout/Icon'
 import { DefaultText } from '../layout/Texts'
-import { QuestionUserType } from '@/screens/ForYou'
+import { QuestionUserType } from '@/types'
 import { Image } from 'react-native'
 
 const Profile = ({ user }: { user: QuestionUserType }) => {

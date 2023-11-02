@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Dimensions, ImageBackground, View } from 'react-native'
 import styled from 'styled-components/native'
 
-import { QuestionType } from '@/screens/ForYou' //todo remove from here
+import { QuestionType } from '@/types'
 
 import SideOptions from './SideOptions'
 import Playlist from './Playlist'
