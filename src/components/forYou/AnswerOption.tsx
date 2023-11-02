@@ -6,13 +6,11 @@ import { BoldText, DefaultText } from '../layout/Texts'
 
 export default function AnswerOption({
   option,
-  isAnswered,
   selectedAnswer,
   rightAnswer,
   onPress,
 }: {
   option: QuestionOptionType
-  isAnswered: boolean
   selectedAnswer: string
   rightAnswer: string
   onPress: (id: string) => void
@@ -21,8 +19,8 @@ export default function AnswerOption({
     <OptionItem
       key={option.id}
       onPress={() => onPress(option.id)}
-      isAnswered={isAnswered}
-      isRight={selectedAnswer === rightAnswer}>
+      isRight={selectedAnswer === rightAnswer}
+      wasSelected={selectedAnswer === option.id}>
       <OptionItemText
         style={{
           textShadowColor: 'rgba(0, 0, 0, 1)',
@@ -36,11 +34,13 @@ export default function AnswerOption({
 }
 
 const OptionItem = styled.TouchableOpacity<{
-  isAnswered: boolean
   isRight: boolean
+  wasSelected: boolean
 }>`
   min-width: 100%;
-  background-color: #ffffff75;
+  background-color: ${({ wasSelected, isRight }) =>
+    !wasSelected ? `#ffffff75` : isRight ? '#00bb4475' : '#a1000075'};
+
   margin: 5px 0;
   padding: 15px 10px;
   border-radius: 8px;

@@ -12,7 +12,6 @@ import AnswerOption from './AnswerOption'
 const { width, height } = Dimensions.get('window')
 
 export default function Question({ question }: { question: QuestionType }) {
-  const [isAnswered, setIsAnswered] = useState<boolean>(false)
   const [selectedAnswer, setSelectedAnswer] = useState<string>('')
 
   const {
@@ -25,7 +24,7 @@ export default function Question({ question }: { question: QuestionType }) {
   } = question
 
   const handleSelectAnswer = (id: string) => {
-    setIsAnswered(true)
+    if (selectedAnswer) return
     setSelectedAnswer(id)
   }
 
@@ -43,7 +42,6 @@ export default function Question({ question }: { question: QuestionType }) {
                 {options.map(option => (
                   <AnswerOption
                     option={option}
-                    isAnswered={isAnswered}
                     selectedAnswer={selectedAnswer}
                     rightAnswer="A"
                     onPress={handleSelectAnswer}
