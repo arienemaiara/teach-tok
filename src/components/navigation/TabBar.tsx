@@ -73,6 +73,7 @@ export default function TabBar({ state, navigation }: BottomTabBarProps) {
           const isRouteActive = routeIndex === activeRouteIndex
           return (
             <IconButton
+              key={route.key}
               onPress={() => handleTabPress({ route, isRouteActive })}>
               {icon && (
                 <StyledIcon icon={icon} active={isRouteActive} size={20} />

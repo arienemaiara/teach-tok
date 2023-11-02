@@ -41,6 +41,7 @@ export default function Question({ question }: { question: QuestionType }) {
               <OptionsWrapper>
                 {options.map(option => (
                   <AnswerOption
+                    key={option.id}
                     option={option}
                     selectedAnswer={selectedAnswer}
                     rightAnswer="A"
@@ -66,7 +67,7 @@ export default function Question({ question }: { question: QuestionType }) {
 
 const Container = styled(ImageBackground)`
   flex: 1;
-  height: ${height - 100};
+  height: ${height - 100}px;
 `
 
 const Column = styled.View`
@@ -80,8 +81,8 @@ const ImageOverlay = styled.View`
   position: absolute;
   background-color: #000;
   opacity: 0.4;
-  height: ${height - 100};
-  width: ${width};
+  height: ${height - 100}px;
+  width: ${width}px;
 `
 
 const Content = styled.View`

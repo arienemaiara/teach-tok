@@ -17,7 +17,6 @@ export default function AnswerOption({
 }): JSX.Element {
   return (
     <OptionItem
-      key={option.id}
       onPress={() => onPress(option.id)}
       isRight={selectedAnswer === rightAnswer}
       wasSelected={selectedAnswer === option.id}>
