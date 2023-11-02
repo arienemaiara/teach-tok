@@ -1,1 +1,5 @@
 export { default as ForYou } from './ForYou'
+export { default as Discover } from './Discover'
+export { default as Activity } from './Activity'
+export { default as Bookmarks } from './Bookmarks'
+export { default as Profile } from './Profile'

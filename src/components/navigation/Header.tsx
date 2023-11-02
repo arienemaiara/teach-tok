@@ -4,7 +4,7 @@ import { BottomTabHeaderProps } from '@react-navigation/bottom-tabs'
 
 import { faSearch, faStopwatch } from '@fortawesome/free-solid-svg-icons'
 
-import { HeaderTitle } from '@/components/layout/Texts'
+import { DefaultText, HeaderTitle } from '@/components/layout/Texts'
 import { StyledIcon } from '@/components/layout/Icon'
 
 export default function Header({
@@ -17,6 +17,7 @@ export default function Header({
     <Container>
       <Timer>
         <StyledIcon icon={faStopwatch} />
+        <DefaultText>10m</DefaultText>
       </Timer>
       <HeaderTitleContainer>
         <HeaderTitle>{options.title}</HeaderTitle>
@@ -33,6 +34,7 @@ const Container = styled.SafeAreaView`
   flex-direction: row;
   justify-content: space-between;
   margin: 15px;
+  align-items: center;
 `
 
 const HeaderTitleContainer = styled.View`
@@ -45,6 +47,8 @@ const HeaderTitleLine = styled.View`
   background-color: black;
 `
 
-const Timer = styled.View``
+const Timer = styled.View`
+  flex-direction: row;
+`
 
 const Search = styled.View``
