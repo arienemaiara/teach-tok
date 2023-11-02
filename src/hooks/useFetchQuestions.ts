@@ -30,7 +30,7 @@ export default function useFetchQuestions() {
   }
 
   return useQuery({
-    queryKey: ['todos', 1],
+    queryKey: ['questions', 1],
     queryFn: fetchQuestions,
     retry: 2,
   })
