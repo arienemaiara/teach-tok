@@ -7,39 +7,9 @@ import { QuestionType, QuestionOptionType } from '@/screens/ForYou' //todo remov
 import SideOptions from './SideOptions'
 import Playlist from './Playlist'
 import { BoldText, DefaultText } from '../layout/Texts'
+import AnswerOption from './AnswerOption'
 
 const { width, height } = Dimensions.get('window')
-
-const Option = ({
-  option,
-  isAnswered,
-  selectedAnswer,
-  rightAnswer,
-  onPress,
-}: {
-  option: QuestionOptionType
-  isAnswered: boolean
-  selectedAnswer: string
-  rightAnswer: string
-  onPress: (id: string) => void
-}) => {
-  return (
-    <OptionItem
-      key={option.id}
-      onPress={() => onPress(option.id)}
-      isAnswered={isAnswered}
-      isRight={selectedAnswer === rightAnswer}>
-      <OptionItemText
-        style={{
-          textShadowColor: 'rgba(0, 0, 0, 1)',
-          textShadowOffset: { width: 1, height: 1 },
-          textShadowRadius: 1,
-        }}>
-        {option.answer}
-      </OptionItemText>
-    </OptionItem>
-  )
-}
 
 export default function Question({ question }: { question: QuestionType }) {
   const [isAnswered, setIsAnswered] = useState<boolean>(false)
@@ -55,6 +25,7 @@ export default function Question({ question }: { question: QuestionType }) {
   } = question
 
   const handleSelectAnswer = (id: string) => {
+    setIsAnswered(true)
     setSelectedAnswer(id)
   }
 
@@ -70,9 +41,9 @@ export default function Question({ question }: { question: QuestionType }) {
             <View>
               <OptionsWrapper>
                 {options.map(option => (
-                  <Option
+                  <AnswerOption
                     option={option}
-                    isAnswered={false}
+                    isAnswered={isAnswered}
                     selectedAnswer={selectedAnswer}
                     rightAnswer="A"
                     onPress={handleSelectAnswer}
@@ -134,7 +105,7 @@ const QuestionTextWrapper = styled.View`
 `
 
 const QuestionText = styled(BoldText)`
-  font-size: 24px;
+  font-size: 22px;
 `
 
 const OptionsWrapper = styled.View`
@@ -143,19 +114,4 @@ const OptionsWrapper = styled.View`
 
 const QuestionDescription = styled.View`
   margin-top: 15px;
-`
-
-const OptionItem = styled.TouchableOpacity<{
-  isAnswered: boolean
-  isRight: boolean
-}>`
-  min-width: 100%;
-  background-color: #ffffff75;
-  margin: 5px 0;
-  padding: 15px 10px;
-  border-radius: 8px;
-`
-
-const OptionItemText = styled(BoldText)`
-  font-size: 16px;
 `
