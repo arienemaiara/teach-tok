@@ -1,9 +1,9 @@
 import { useState } from 'react'
-import { useQuery } from '@tanstack/react-query'
+import { useQuery, useInfiniteQuery } from '@tanstack/react-query'
 
 import { BASE_URL, NUMBER_OF_ITEMS_TO_FETCH } from '@/constants'
 
-import { QuestionType, QuestionOptionType } from '@/types'
+import { QuestionType } from '@/types'
 
 export default function useFetchQuestions() {
   const [fetchedIds] = useState<Set<number>>(new Set())
@@ -32,8 +32,6 @@ export default function useFetchQuestions() {
 
         question.correct_options = correct_options
 
-        console.log(question)
-
         collectedData.push(question)
         fetchedIds.add(questionId)
       }
@@ -42,9 +40,10 @@ export default function useFetchQuestions() {
     return collectedData
   }
 
-  return useQuery({
-    queryKey: ['questions', 1],
+  return useInfiniteQuery({
+    queryKey: ['questions'],
     queryFn: fetchQuestions,
-    retry: 2,
+    getNextPageParam: () => 1,
+    initialPageParam: undefined,
   })
 }

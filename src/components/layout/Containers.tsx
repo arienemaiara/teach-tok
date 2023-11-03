@@ -1,7 +1,9 @@
 import styled from 'styled-components/native'
+import { Dimensions } from 'react-native'
+
+const { width, height } = Dimensions.get('window')
 
 export const ScreenContainer = styled.View`
-  /* flex: 1;
-  padding: 100px 15px 15px;
-  background-color: #333; */
+  height: ${height - 100}px;
+  width: ${width}px;
 `

@@ -17,6 +17,7 @@
     "@fortawesome/react-native-fontawesome": "^0.3.0",
     "@react-navigation/bottom-tabs": "^6.5.11",
     "@react-navigation/native": "^6.1.9",
+    "@shopify/flash-list": "^1.6.2",
     "@tanstack/react-query": "^5.4.3",
     "react": "18.2.0",
     "react-native": "0.72.6",
