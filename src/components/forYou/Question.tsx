@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Dimensions, ImageBackground, View } from 'react-native'
 import styled from 'styled-components/native'
 
-import { QuestionType } from '@/types'
+import { QuestionType, SelectAnswer } from '@/types'
 
 import SideOptions from './SideOptions'
 import Playlist from './Playlist'
@@ -11,9 +11,15 @@ import AnswerOption from './AnswerOption'
 
 const { width, height } = Dimensions.get('window')
 
-export default function Question({ question }: { question: QuestionType }) {
-  const [selectedAnswer, setSelectedAnswer] = useState<string>('')
-
+export default function Question({
+  question,
+  onSelectAnswer,
+  selectedAnswer,
+}: {
+  question: QuestionType
+  onSelectAnswer: (props: SelectAnswer) => void
+  selectedAnswer: string
+}) {
   const {
     image,
     question: title,
@@ -23,9 +29,12 @@ export default function Question({ question }: { question: QuestionType }) {
     playlist,
   } = question
 
-  const handleSelectAnswer = (id: string) => {
+  const handleSelectAnswer = (answerId: string) => {
     if (selectedAnswer) return
-    setSelectedAnswer(id)
+    onSelectAnswer({
+      questionId: question.id,
+      selectedAnswer: answerId,
+    })
   }
 
   return (

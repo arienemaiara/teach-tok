@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import styled from 'styled-components/native'
 
-import { QuestionType, QuestionOptionType } from '@/screens/ForYou' //todo remove from here
-import { BoldText, DefaultText } from '../layout/Texts'
+import { QuestionOptionType } from '@/types'
+import { BoldText } from '../layout/Texts'
 
 export default function AnswerOption({
   option,
