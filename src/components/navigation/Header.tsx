@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
+import { AppState, AppStateStatus } from 'react-native'
 import styled from 'styled-components/native'
 import { BottomTabHeaderProps } from '@react-navigation/bottom-tabs'
 
@@ -8,11 +9,40 @@ import { DefaultText, HeaderTitle } from '@/components/layout/Texts'
 import { StyledIcon } from '@/components/layout/Icon'
 
 export default function Header({ options }: BottomTabHeaderProps) {
+  const [timeSpent, setTimeSpent] = useState(0)
+  const [isActive, setIsActive] = useState(true)
+
+  const updateActiveTime = () => {
+    if (isActive) {
+      setTimeSpent(prevTime => prevTime + 1)
+    }
+  }
+
+  useEffect(() => {
+    const timer = setInterval(updateActiveTime, 1000)
+
+    const handleAppStateChange = (nextAppState: AppStateStatus) => {
+      setIsActive(nextAppState === 'active')
+    }
+
+    const appStateSubscription = AppState.addEventListener(
+      'change',
+      handleAppStateChange,
+    )
+
+    return () => {
+      clearInterval(timer)
+      appStateSubscription.remove()
+    }
+  }, [])
+
+  const minutes = Math.floor(timeSpent / 60)
+
   return (
     <Container>
       <Timer>
         <StyledIcon icon={faStopwatch} />
-        <TimerText>10m</TimerText>
+        <TimerText>{minutes}m</TimerText>
       </Timer>
       <HeaderTitleContainer>
         <HeaderTitle>{options.title}</HeaderTitle>
