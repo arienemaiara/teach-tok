@@ -7,18 +7,18 @@ import { BoldText } from '../layout/Texts'
 export default function AnswerOption({
   option,
   selectedAnswer,
-  rightAnswer,
+  rightAnswers,
   onPress,
 }: {
   option: QuestionOptionType
   selectedAnswer: string
-  rightAnswer: string
+  rightAnswers: string[]
   onPress: (id: string) => void
 }): JSX.Element {
   return (
     <OptionItem
       onPress={() => onPress(option.id)}
-      isRight={selectedAnswer === rightAnswer}
+      isRight={rightAnswers.includes(selectedAnswer)}
       wasSelected={selectedAnswer === option.id}>
       <OptionItemText
         style={{

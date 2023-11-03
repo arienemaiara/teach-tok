@@ -27,7 +27,10 @@ export default function Question({
     user,
     description,
     playlist,
+    correct_options,
   } = question
+
+  const correctOptionIds = correct_options.map(option => option.id)
 
   const handleSelectAnswer = (answerId: string) => {
     if (selectedAnswer) return
@@ -53,7 +56,7 @@ export default function Question({
                     key={option.id}
                     option={option}
                     selectedAnswer={selectedAnswer}
-                    rightAnswer="A"
+                    rightAnswers={correctOptionIds}
                     onPress={handleSelectAnswer}
                   />
                 ))}
