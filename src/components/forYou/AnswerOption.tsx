@@ -26,7 +26,7 @@ const ResultAnimation = ({
         width: 80,
         position: 'absolute',
         zIndex: 1,
-        right: 0,
+        right: -10,
         top: itemHeight <= 52 ? -15 : 0,
       }}
     />
