@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useMemo } from 'react'
+import React, { useState, useMemo } from 'react'
 import { Dimensions } from 'react-native'
 import { FlashList } from '@shopify/flash-list'
 
