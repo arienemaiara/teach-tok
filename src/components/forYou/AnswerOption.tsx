@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
+import { LayoutChangeEvent } from 'react-native'
 import styled from 'styled-components/native'
 import LottieView from 'lottie-react-native'
 
 import { QuestionOptionType } from '@/types'
 import { BoldText } from '../layout/Texts'
-import { LayoutChangeEvent, View } from 'react-native'
 
 const ResultAnimation = ({
   isRight,
@@ -13,7 +13,6 @@ const ResultAnimation = ({
   isRight: boolean
   itemHeight: number
 }) => {
-  console.log('animation itemHeight', itemHeight)
   const animationFile = isRight
     ? require('../../../assets/animations/thumbs_up.json')
     : require('../../../assets/animations/thumbs_down.json')
